@@ -13,6 +13,8 @@
       dcl-s wFechaT varchar(100) Template;
       dcl-s wTiempoT varchar(100) Template;
       dcl-s wSqlStateT char(5) Template;
+      dcl-s wErrorT Varchar(100) Template 
+      dcl-s werrorsqlT Varchar(7) Template
 
       dcl-pr PrInsertar;
         parUsuario likeDs(DsUsuarioT) Const;
@@ -31,4 +33,10 @@
         parNombre like(wNombreT) Const;
         parId like(wIdT) Const;
         parMsgId like(wMsgIdT);
+      end-pr;
+
+       dcl-pr FnErrorSQL like(wErrorT);
+        parErrorsql like(werrorsqlT) Const;
+        
+
       end-pr;

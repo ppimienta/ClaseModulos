@@ -29,3 +29,22 @@
         Return wTiempo;
 
       end-Proc; 
+
+      dcl-Proc FnErrorSQL Export;
+        dcl-pi *n like(wErrorT);
+          InErrorSql like(werrorsqlT) Const;
+        end-pi;
+
+        dcl-s wmensaje like(wErrorT);
+        Select;
+           when InErrorSql = '00000' then
+                wmensaje = 'Exitoso' ;
+           when InErrorSql = '00100' then
+                wmensaje = 'No encontrado';
+           other 
+                wmensaje = 'No definido';         
+        endsl;
+      
+        Return wmensaje;
+
+      end-Proc; 
